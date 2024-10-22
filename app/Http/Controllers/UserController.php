@@ -16,6 +16,7 @@ class UserController extends Controller
 
     public function __invoke(){
         $users = DB::connection('mysql')->table('user')->select(['first_name', 'email'])->get();
-        return view('users', ['users' => $users]);
+//        return view('users', ['users' => $users]);
+        return view('user', ['users' => $users]);
     }
 }
