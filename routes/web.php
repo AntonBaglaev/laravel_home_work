@@ -19,5 +19,7 @@ Route::get('/', function () {
 
 Route::get('/test', \App\Http\Controllers\TestController::class);
 // Route::get('/users', [\App\Http\Controllers\UserController::class, 'showUsers']);
-Route::get('/users', \App\Http\Controllers\UserController::class);
+// Route::get('/users', \App\Http\Controllers\UserController::class); // список пользователй
 Route::get('/test', [\App\Http\Controllers\SimpleController::class, 'test']);
+Route::get('/user', [\App\Http\Controllers\UserController::class, 'index']); // форма добавления
+Route::post('/user', [\App\Http\Controllers\UserController::class, 'store'])->name('store-user');
