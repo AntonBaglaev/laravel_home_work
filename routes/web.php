@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/test', \App\Http\Controllers\TestController::class);
-
 // Route::get('/users', [\App\Http\Controllers\UserController::class, 'showUsers']);
 Route::get('/users', \App\Http\Controllers\UserController::class);
+Route::get('/test', [\App\Http\Controllers\SimpleController::class, 'test']);
