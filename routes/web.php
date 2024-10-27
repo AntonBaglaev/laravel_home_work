@@ -31,3 +31,5 @@ where(['id' => '[A-Za-z0-9]+'])->name('remove_book');
 
 Route::get('/upload', [\App\Http\Controllers\FileUploadController::class, 'index']);
 Route::post('/upload', [\App\Http\Controllers\FileUploadController::class, 'upload'])->name('upload_file');
+
+Route::get('/library_user/{id}', [\App\Http\Controllers\LibraryUserController::class, 'showUser'])->where(['id' => '[0-1]+']);
