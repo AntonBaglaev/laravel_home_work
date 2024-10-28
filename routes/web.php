@@ -37,3 +37,5 @@ Route::get('/library_user/{id}', [\App\Http\Controllers\LibraryUserController::c
 Route::get('/my_user', [\App\Http\Controllers\MyUserController::class, 'showUser']);
 
 Route::get('/redirect_test', \App\Http\Controllers\TestRedirectController::class);
+
+Route::get('/send_file', \App\Http\Controllers\SendFileController::class);
