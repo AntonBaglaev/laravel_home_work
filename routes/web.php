@@ -39,3 +39,7 @@ Route::get('/my_user', [\App\Http\Controllers\MyUserController::class, 'showUser
 Route::get('/redirect_test', \App\Http\Controllers\TestRedirectController::class);
 
 Route::get('/send_file', \App\Http\Controllers\SendFileController::class);
+
+Route::get('/userform', [\App\Http\Controllers\FormProcessorController::class, 'index']);
+Route::post('/store_form', [\App\Http\Controllers\FormProcessorController::class, 'store']);
+Route::get('/hello/{first_name}', [\App\Http\Controllers\FormProcessorController::class, 'hello'])->name('hello');
