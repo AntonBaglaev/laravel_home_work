@@ -26,11 +26,17 @@ class TestDatabase extends Command
      */
     public function handle()
     {
-        for($i=0; $i<5; $i++) {
-            $employee = new Employee();
-            $employee->first_name = 'John';
-            $employee->save();
-        }
+        $employee = Employee::where('id',5)->first();
+        $employee->first_name = 'Joseph';
+        $employee->save();
+
+
+
+//        for($i=0; $i<5; $i++) {
+//            $employee = new Employee();
+//            $employee->first_name = 'John';
+//            $employee->save();
+//        }
         return 0;
     }
 }
