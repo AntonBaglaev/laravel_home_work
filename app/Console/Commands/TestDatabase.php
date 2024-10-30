@@ -26,9 +26,13 @@ class TestDatabase extends Command
      */
     public function handle()
     {
-        $employee = Employee::where('id',5)->first();
-        $employee->first_name = 'Joseph';
-        $employee->save();
+        Employee::where('id',6)->delete();
+
+
+
+//        $employee = Employee::where('id',5)->first();
+//        $employee->first_name = 'Joseph';
+//        $employee->save();
 
 
 
