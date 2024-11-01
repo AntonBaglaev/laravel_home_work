@@ -25,26 +25,44 @@ class TestDataSelect extends Command
      * Execute the console command.
      */
     public function handle() {
-//        $employees = Employee::all();  // получаем все записи из БД
+         // получаем все записи из БД
+//        $employees = Employee::all();
 //        foreach ($employees as $employee) {
 //            echo $employee->first_name . ' ' . $employee->id . PHP_EOL;
 //        }
 //        return 0;
 
-//        $employees = Employee::find(2);  // получаем пользователя с id = 2
+          // получаем пользователя с id = 2
+//        $employees = Employee::find(2);
 //        echo $employees['first_name'] . ' ' . $employees['id'] . PHP_EOL;
 //        return 0;
 
-//        $employees = Employee::where('first_name', '=', 'John')->get();  // получаем все строки таблициы с именем John
+          // получаем все строки таблициы с именем John
+//        $employees = Employee::where('first_name', '=', 'John')->get();
 //        foreach ($employees as $employee) {
 //            echo $employee->first_name . ' ' . $employee->id . PHP_EOL;
 //        }
 //        return 0;
 
-        $employees = Employee::where('first_name', '=', 'John')  // получаем все строки таблициы с именем John и возраст больше 27 лет
-            ->where('age', '>', 27)->get();
+        // получаем все строки таблициы с именем John и возраст больше 27 лет
+        // $employees = Employee::where('first_name', '=', 'John')
+        //    ->where('age', '>', 27)->get();
+        // foreach ($employees as $employee) {
+        //    echo $employee->first_name . ' ' . $employee->id . PHP_EOL;
+        // }
+        // return 0;
+
+        // сортируем по возрасту и ограничиваем вывод двумя строками
+        // $employees = Employee::orderBy('age', 'ASC')->limit(2)->get();
+        // foreach ($employees as $employee) {
+        //        echo $employee->first_name . ' ' . $employee->id . ' ' . $employee->age . PHP_EOL;
+        // }
+        // return 0;
+
+        // сортируем по возрасту и ограничиваем вывод двумя строками и получаем 2 результата начиная с 3 строки
+        $employees = Employee::orderBy('age', 'ASC')->skip(2)->limit(2)->get();
         foreach ($employees as $employee) {
-            echo $employee->first_name . ' ' . $employee->id . PHP_EOL;
+            echo $employee->first_name . ' ' . $employee->id . ' ' . $employee->age . PHP_EOL;
         }
         return 0;
 
