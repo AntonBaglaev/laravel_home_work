@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Employee;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class TestDataSelect extends Command
 {
@@ -60,9 +61,28 @@ class TestDataSelect extends Command
         // return 0;
 
         // сортируем по возрасту и ограничиваем вывод двумя строками и получаем 2 результата начиная с 3 строки
-        $employees = Employee::orderBy('age', 'ASC')->skip(2)->limit(2)->get();
+        // $employees = Employee::orderBy('age', 'ASC')->skip(2)->limit(2)->get();
+        // foreach ($employees as $employee) {
+        //     echo $employee->first_name . ' ' . $employee->id . ' ' . $employee->age . PHP_EOL;
+        // }
+        // return 0;
+
+        // считаем сотрудников с одинаковым именем
+        // $employees = DB::table('employees')
+        //             ->groupBy('first_name')
+        //            ->select('first_name', DB::raw('count(1) as employee_total'))
+        //            ->get();
+
+        // foreach ($employees as $employee) {
+        //     echo $employee->first_name . ' ' . $employee->employee_total . PHP_EOL;
+        // }
+        // return 0;
+
+        // узнаем уникальные имена сотрудников
+        $employees = Employee::distinct()->orderBy('first_name')->get(['first_name']);
+
         foreach ($employees as $employee) {
-            echo $employee->first_name . ' ' . $employee->id . ' ' . $employee->age . PHP_EOL;
+            echo $employee->first_name . PHP_EOL;
         }
         return 0;
 
