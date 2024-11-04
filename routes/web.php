@@ -43,3 +43,4 @@ Route::get('/send_file', \App\Http\Controllers\SendFileController::class);
 Route::get('/userform', [\App\Http\Controllers\FormProcessorController::class, 'index']);
 Route::post('/store_form', [\App\Http\Controllers\FormProcessorController::class, 'store']);
 Route::get('/hello/{first_name}', [\App\Http\Controllers\FormProcessorController::class, 'hello'])->name('hello');
+Route::get('/test_database', \App\Http\Controllers\EmployeeController::class);
