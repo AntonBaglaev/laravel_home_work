@@ -30,6 +30,10 @@ Route::get('/users_list', function () {
     return view('newusers', ['userlist' => $users]);
 });
 
+Route::get('/uppercase', function () {
+    return view('testdir');
+});
+
 
 Route::get('/test', \App\Http\Controllers\TestController::class);
 // Route::get('/users', [\App\Http\Controllers\UserController::class, 'showUsers']);
