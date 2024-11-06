@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/main', function () {
+    return view('mainpage');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+
 Route::get('/test', \App\Http\Controllers\TestController::class);
 // Route::get('/users', [\App\Http\Controllers\UserController::class, 'showUsers']);
 // Route::get('/users', \App\Http\Controllers\UserController::class); // список пользователй
