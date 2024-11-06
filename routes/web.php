@@ -25,6 +25,11 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/users_list', function () {
+    $users = ['Ivan', 'Petr', 'Nikolay', 'Vasiliy', 'Oleg'];
+    return view('newusers', ['userlist' => $users]);
+});
+
 
 Route::get('/test', \App\Http\Controllers\TestController::class);
 // Route::get('/users', [\App\Http\Controllers\UserController::class, 'showUsers']);
