@@ -13,8 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::get('/', function () {
-    return view('welcome');
+    $data = [
+        'name' => 'Anton',
+        'age' => 39,
+        'position' => 'developer and QA',
+        'address' => 'Moscow'
+    ];
+    return view('home', $data);
+});
+
+Route::get('/contacts', function () {
+    $data = [
+        'address' => 'Mira Pr',
+        'post_code' => 101000,
+        'email' => 'gmail@gmail.com',
+        'phone' => '12345678910'
+    ];
+    return view('contacts', $data);
 });
 
 Route::get('/main', function () {
