@@ -13,19 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::get('/', function () {
-    $data = [
-        'name' => 'Anton',
-        'age' => 39,
-        'position' => 'developer and QA',
-        'address' => 'Moscow'
-    ];
-    return view('home', $data);
+    return view('welcome');
 });
+
+Route::get('/test_parameters', [\App\Http\Controllers\RequestTestController::class, 'testRequest']);
+
+//Route::get('/', function () {
+//    $data = [
+//        'name' => 'Anton',
+//        'age' => 39,
+//        'position' => 'developer and QA',
+//        'address' => 'Moscow'
+//    ];
+//    return view('home', $data);
+//});
 
 Route::get('/contacts', function () {
     $data = [
