@@ -17,8 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test_parameters', [\App\Http\Controllers\RequestTestController::class, 'testRequest']);
-
 //Route::get('/', function () {
 //    $data = [
 //        'name' => 'Anton',
@@ -84,3 +82,6 @@ Route::get('/userform', [\App\Http\Controllers\FormProcessorController::class, '
 Route::post('/store_form', [\App\Http\Controllers\FormProcessorController::class, 'store']);
 Route::get('/hello/{first_name}', [\App\Http\Controllers\FormProcessorController::class, 'hello'])->name('hello');
 Route::get('/test_database', \App\Http\Controllers\EmployeeController::class);
+
+Route::get('/test_parameters', [\App\Http\Controllers\RequestTestController::class, 'testRequest']);
+Route::get('/test_header', [\App\Http\Controllers\TestHeaderController::class, 'getHeader']);
