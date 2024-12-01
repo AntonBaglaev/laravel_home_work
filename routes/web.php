@@ -89,3 +89,5 @@ Route::get('/test_cookie', [\App\Http\Controllers\TestCookieController::class, '
 
 Route::get('/upload_file', [\App\Http\Controllers\FileUploadControllerNew::class, 'showForm'])->name('showForm');
 Route::post('/upload_file', [\App\Http\Controllers\FileUploadControllerNew::class, 'fileUpload'])->name('uploadFile');
+
+Route::post('/json_parse', [\App\Http\Controllers\JsonParseController::class, 'parseJson']);
