@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,3 +100,6 @@ Route::put('employee/{id}', [EmployeeController::class, 'update']);
 Route::get('employee', [EmployeeController::class, 'showAll']);
 Route::get('json-textarea', [EmployeeController::class, 'showJsonTextarea']);
 Route::post('json_data', [EmployeeController::class, 'jsonData'])->name('jsonData');
+
+Route::get('/form', [TestFormController::class, 'displayForm'])->name('show_form');
+Route::post('/form', [TestFormController::class, 'postForm'])->name('post_form');
