@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,7 +82,7 @@ Route::get('/send_file', \App\Http\Controllers\SendFileController::class);
 Route::get('/userform', [\App\Http\Controllers\FormProcessorController::class, 'index']);
 Route::post('/store_form', [\App\Http\Controllers\FormProcessorController::class, 'store']);
 Route::get('/hello/{first_name}', [\App\Http\Controllers\FormProcessorController::class, 'hello'])->name('hello');
-Route::get('/test_database', \App\Http\Controllers\EmployeeController::class);
+// Route::get('/test_database', \App\Http\Controllers\EmployeeController::class);
 
 Route::get('/test_parameters', [\App\Http\Controllers\RequestTestController::class, 'testRequest']);
 Route::get('/test_header', [\App\Http\Controllers\TestHeaderController::class, 'getHeader']);
@@ -91,3 +92,10 @@ Route::get('/upload_file', [\App\Http\Controllers\FileUploadControllerNew::class
 Route::post('/upload_file', [\App\Http\Controllers\FileUploadControllerNew::class, 'fileUpload'])->name('uploadFile');
 
 Route::post('/json_parse', [\App\Http\Controllers\JsonParseController::class, 'parseJson']);
+
+Route::get('get-form', [EmployeeController::class, 'index']);
+Route::post('store-form', [EmployeeController::class, 'store']);
+Route::put('employee/{id}', [EmployeeController::class, 'update']);
+Route::get('employee', [EmployeeController::class, 'showAll']);
+Route::get('json-textarea', [EmployeeController::class, 'showJsonTextarea']);
+Route::post('json_data', [EmployeeController::class, 'jsonData'])->name('jsonData');
