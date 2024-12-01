@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestFormController;
+use App\Http\Controllers\EmployeeNewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,3 +104,6 @@ Route::post('json_data', [EmployeeController::class, 'jsonData'])->name('jsonDat
 
 Route::get('/form', [TestFormController::class, 'displayForm'])->name('show_form');
 Route::post('/form', [TestFormController::class, 'postForm'])->name('post_form');
+
+Route::post('/employee_new', [EmployeeNewController::class, 'store'])->name('store_employee');
+Route::get('/employee_new/{id?}', [EmployeeNewController::class, 'show'])->name('show_employee');
