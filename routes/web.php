@@ -4,6 +4,7 @@ use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestFormController;
 use App\Http\Controllers\EmployeeNewController;
+use App\Http\Controllers\TestSecurityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,3 +108,6 @@ Route::post('/form', [TestFormController::class, 'postForm'])->name('post_form')
 
 Route::post('/employee_new', [EmployeeNewController::class, 'store'])->name('store_employee');
 Route::get('/employee_new/{id?}', [EmployeeNewController::class, 'show'])->name('show_employee');
+
+Route::get('/security_test', [TestSecurityController::class, 'show'])->name('show_security_form');
+Route::post('/security_test', [TestSecurityController::class, 'post'])->name('post_security_form');
