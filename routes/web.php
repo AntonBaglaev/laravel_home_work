@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestFormController;
 use App\Http\Controllers\EmployeeNewController;
 use App\Http\Controllers\TestSecurityController;
+use App\Http\Controllers\TestValidationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,3 +112,6 @@ Route::get('/employee_new/{id?}', [EmployeeNewController::class, 'show'])->name(
 
 Route::get('/security_test', [TestSecurityController::class, 'show'])->name('show_security_form');
 Route::post('/security_test', [TestSecurityController::class, 'post'])->name('post_security_form');
+
+Route::get('/test_validation', [TestValidationController::class, 'show'])->name('show_validation_form');
+Route::post('/test_validation', [TestValidationController::class, 'post'])->name('post_validation_form');
