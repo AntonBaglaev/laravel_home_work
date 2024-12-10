@@ -6,6 +6,7 @@ use App\Http\Controllers\TestFormController;
 use App\Http\Controllers\EmployeeNewController;
 use App\Http\Controllers\TestSecurityController;
 use App\Http\Controllers\TestValidationController;
+use App\Http\Controllers\FormBuilderTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,3 +116,6 @@ Route::post('/security_test', [TestSecurityController::class, 'post'])->name('po
 
 Route::get('/test_validation', [TestValidationController::class, 'show'])->name('show_validation_form');
 Route::post('/test_validation', [TestValidationController::class, 'post'])->name('post_validation_form');
+
+Route::get('/test_builder', [FormBuilderTestController::class, 'show'])->name('show_builder_test');
+Route::post('/test_builder', [FormBuilderTestController::class, 'post'])->name('post_builder_test');
