@@ -1,25 +1,40 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="ru">
 <head>
-    <title>Форма</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books</title>
 </head>
-
 <body>
-<h1>Заполните форму</h1>
-<form action="/store_form" method="POST">
+<form action="{{route('book_store')}}" method="post">
     @csrf
-    <label for="first_name">Имя:</label>
-    <input type="text" id="first_name" name="first_name"><br><br>
-
-    <label for="last_name">Фамилия:</label>
-    <input type="text" id="last_name" name="last_name"><br><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
-
-    <button type="submit">Отправить</button>
+    <div class="form_section">
+        <label for="title">Title </label>
+        <input type="text" name="title" id="title" required>
+    </div>
+    <div class="form_section">
+        <label for="author">Author </label>
+        <input type="text" name="author" id="author" required>
+    </div>
+    <div class="form_section">
+        <label for="genre">Choose Genre </label>
+        <select name="genre" id="genre">
+            <option value="fantasy">Fantasy</option>
+            <option value="sci-fi">Sci-fi</option>
+            <option value="mystery">Mystery</option>
+            <option value="drama">Drama</option>
+        </select>
+    </div>
+    <button type="submit">Submit</button>
 </form>
+@if($errors->any())
+    <ul>
+        @foreach($errors->all() as $error)
+            <li style="color: red">{{$error}}</li>
+        @endforeach
+    </ul>
+@endif
 </body>
-
 </html>

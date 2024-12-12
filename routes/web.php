@@ -7,6 +7,7 @@ use App\Http\Controllers\EmployeeNewController;
 use App\Http\Controllers\TestSecurityController;
 use App\Http\Controllers\TestValidationController;
 use App\Http\Controllers\FormBuilderTestController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,3 +120,6 @@ Route::post('/test_validation', [TestValidationController::class, 'post'])->name
 
 Route::get('/test_builder', [FormBuilderTestController::class, 'show'])->name('show_builder_test');
 Route::post('/test_builder', [FormBuilderTestController::class, 'post'])->name('post_builder_test');
+
+Route::get('book', [BookController::class, 'index'])->name('book_form');
+Route::post('book', [BookController::class, 'store'])->name('book_store');
